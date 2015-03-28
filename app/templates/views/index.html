@@ -9,14 +9,35 @@
 </head>
 <body>
 	<header>
-		Header
+		<div class="ui teal large inverted menu">
+			<a class="ui item">
+				<i class="group icon"></i> VPMP
+			</a>
+			<a class="active item">
+				<i class="home icon"></i> Home
+			</a>
+			
+				<div class="item">
+					<div class="ui fluid icon input">
+						<input type="text" placeholder="Buscar...">
+						<i class="search link icon"></i>
+					</div>
+				</div>
+				<div class="right menu">
+				<a class="ui item">
+					Iniciar Sesión
+				</a>
+				<a class="ui item">
+					Registrarse
+				</a>
+			</div>
+		</div>
+
 	</header>
 
-
-	<div class="ui page grid">
-		<div class="one wide column"></div>
-		<div class="four wide column">
-			<div class="ui raised segment">
+	<div class="ui grid">
+		<div class="three wide column">
+			<div class="ui raised teal segment">
 				<h2>Buscar por:</h2>
 				<div class="ui form">
 					<div class="field">
@@ -29,7 +50,7 @@
 						</select>
 					</div>
 					<div class="field">
-						<label>Fecha de nacimiento</label>
+						<label>Fecha de extravío</label>
 						<input type="date">
 					</div>
 					<div class="field">
@@ -42,8 +63,13 @@
 						</select>
 					</div>
 					<div class="field">
-						<label>Estatus</label>
-						<input type="text">
+						<label>Ciudad</label>
+						<select class="ui dropdown">
+							<option value="">Seleccionar</option>
+							<option value="0">Aguascalientes</option>
+							<option value="1">Guadalajara</option>
+							<option value="2">Hermosillo</option>
+						</select>
 					</div>
 					<div class="field">
 						<label>Sexo</label>
@@ -79,7 +105,8 @@
 				<div>
 					<div class="ui horizontal divider">dd/mm/yyyy</div>	
 					<div class="ui grid">
-						<div class="eight wide column">
+						<div class="one wide column"></div>
+						<div class="four wide column">
 							<div class="ui segment">
 								<div>
 									<img class="ui medium image" src="{% static "img/image.png" %}">
@@ -92,7 +119,8 @@
 								<div>Lugar</div>
 							</div>
 						</div>
-						<div class="eight wide column">
+						<div class="one wide column"></div>
+						<div class="four wide column">
 							<div class="ui segment">
 								<div>
 									<img class="ui medium image" src="{% static "img/image.png" %}">
@@ -105,12 +133,8 @@
 								<div>Lugar</div>
 							</div>
 						</div>
-					</div>
-				</div>
-				<div>
-					<div class="ui horizontal divider">dd/mm/yyyy</div>
-					<div class="ui grid">
-						<div class="eight wide column">
+						<div class="one wide column"></div>
+						<div class="four wide column">
 							<div class="ui segment">
 								<div>
 									<img class="ui medium image" src="{% static "img/image.png" %}">
@@ -128,7 +152,8 @@
 				<div>
 					<div class="ui horizontal divider">dd/mm/yyyy</div>	
 					<div class="ui grid">
-						<div class="eight wide column">
+						<div class="one wide column"></div>
+						<div class="four wide column">
 							<div class="ui segment">
 								<div>
 									<img class="ui medium image" src="{% static "img/image.png" %}">
@@ -141,7 +166,8 @@
 								<div>Lugar</div>
 							</div>
 						</div>
-						<div class="eight wide column">
+						<div class="one wide column"></div>
+						<div class="four wide column">
 							<div class="ui segment">
 								<div>
 									<img class="ui medium image" src="{% static "img/image.png" %}">
@@ -154,7 +180,8 @@
 								<div>Lugar</div>
 							</div>
 						</div>
-						<div class="eight wide column">
+						<div class="one wide column"></div>
+						<div class="four wide column">
 							<div class="ui segment">
 								<div>
 									<img class="ui medium image" src="{% static "img/image.png" %}">
@@ -174,12 +201,23 @@
 		<div class="one wide column"></div>
 	</div>
 
-
-	
-
 	<footer>
-		Footer
+		<div class="ui grid">
+			<div class="sixteen wide column">
+				<div class="ui center aligned segment">
+					<a href="/modules/dropdown.html">Home </a> &nbsp; | &nbsp;
+					<a href="/modules/dropdown.html">¿Qué hacer? </a> &nbsp; | &nbsp;
+					<a href="/modules/dropdown.html">¿Cómo denunciar? </a> &nbsp; | &nbsp;
+					<a href="/modules/dropdown.html">Contacto </a> &nbsp; | &nbsp;
+					<a href="/modules/dropdown.html">Acerca de</a> &nbsp; | &nbsp;
+					©2015 VPMP
+				</div>
+			</div>
+			<div class="two wide column">
+			</div>
+		</div>
 	</footer>
+
 	<script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
 	<script type="text/javascript" src="{% static "js/semantic.min.js" %}"></script>
 	<script type="text/javascript" src="{% static "js/general.js" %}"></script>
