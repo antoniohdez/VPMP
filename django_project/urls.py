@@ -11,5 +11,8 @@ urlpatterns = patterns('',
     url(r'^report', 'app.views.report', name = 'report'),
     url(r'^template', 'app.views.template', name = 'template'),
     url(r'^generate', 'app.views.generate', name = 'generate'),
+    url(r'^profile', 'app.views.profile', name = 'profile'),
+    url(r'^login', 'app.views.login', name = 'login'),
+    url(r'^register', 'app.views.register', name = 'register'),
     url(r'^admin/', include(admin.site.urls)),
 )

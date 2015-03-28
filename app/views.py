@@ -14,7 +14,7 @@ def index(request):
     template = loader.get_template("general/template.html")
     html = loader.render_to_string("views/index.html", {})
     context = RequestContext(request, {
-        'content': htmlg
+        'content': html
         })
     return HttpResponse(template.render(context))
 
@@ -29,6 +29,30 @@ def report(request):
 def generate(request):
     template = loader.get_template("general/template.html")
     html = loader.render_to_string("views/report-create.html", {})
+    context = RequestContext(request, {
+        'content': html
+        })
+    return HttpResponse(template.render(context))
+
+def profile(request):
+    template = loader.get_template("general/template.html")
+    html = loader.render_to_string("views/profile.html", {})
+    context = RequestContext(request, {
+        'content': html
+        })
+    return HttpResponse(template.render(context))
+
+def login(request):
+    template = loader.get_template("general/template.html")
+    html = loader.render_to_string("views/login.html", {})
+    context = RequestContext(request, {
+        'content': html
+        })
+    return HttpResponse(template.render(context))
+
+def register(request):
+    template = loader.get_template("general/template.html")
+    html = loader.render_to_string("views/register.html", {})
     context = RequestContext(request, {
         'content': html
         })

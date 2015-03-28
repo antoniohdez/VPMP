@@ -1,3 +1,7 @@
+.container{
+	margin: 3em 0em;
+}
+
 .description-item > span:first-child{
 	font-weight: bold;
 }
@@ -5,3 +9,4 @@
 .comment{
 	padding: 1em;
 }
+
