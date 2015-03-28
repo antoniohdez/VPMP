@@ -8,50 +8,15 @@
 
 </head>	
 <body>
-	<header>
-		<div class="ui blue large inverted menu">
-			<a class="ui item">
-				<i class="group icon"></i> VPMP
-			</a>
-			<a class="item">
-				<i class="home icon"></i> Home
-			</a>
-			<div class="right menu">
-				<div class="item">
-					<div class="ui fluid icon input">
-						<input type="text" placeholder="Buscar...">
-						<i class="search link icon"></i>
-					</div>
-				</div>
-				<a class="ui item">
-					Iniciar Sesión
-				</a>
-				<a class="ui item">
-					Registrarse
-				</a>
-			</div>
-		</div>
+	
+	{% include "general/_header.html" %}
 
-	</header>
+	<div>
+		{{content}}
+	</div>
 
-	<div>Content</div>
-
-	<footer>
-		<div class="ui grid">
-			<div class="sixteen wide column">
-				<div class="ui center aligned segment">
-					<a href="/modules/dropdown.html">Home </a> &nbsp; | &nbsp;
-					<a href="/modules/dropdown.html">¿Qué hacer? </a> &nbsp; | &nbsp;
-					<a href="/modules/dropdown.html">¿Cómo denunciar? </a> &nbsp; | &nbsp;
-					<a href="/modules/dropdown.html">Contacto </a> &nbsp; | &nbsp;
-					<a href="/modules/dropdown.html">Acerca de</a> &nbsp; | &nbsp;
-					©2015 VPMP
-				</div>
-			</div>
-			<div class="two wide column">
-			</div>
-		</div>
-	</footer>
+	{% include 'general/_footer.html' %}
+	
 	<script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
 	<script type="text/javascript" src="{% static "js/semantic.min.js" %}"></script>
 	<script type="text/javascript" src="{% static "js/general.js" %}"></script>

@@ -1,117 +1,94 @@
-<!DOCTYPE html>
-<html >
-<head>
-	<title></title>
-	{% load staticfiles %}
-	<link rel="stylesheet" type="text/css" href="{% static "css/semantic.min.css" %}">
-	<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
-
-</head>
-<body>
-	<header>
-		Header
-	</header>
-
-	<p>Reporte</p>
-	<div class="ui page grid">
-		<div class="one wide column"></div>
-		<div class="seven wide column">
-			<div class="ui raised segment">
-				<div class="ui form">
-					<div class="ui grid">
-						<div class="eight wide column">
-							<div class="field">
-								<label>Estatus</label>
-								<select class="ui dropdown">
-									<option value="">Seleccionar</option>
-									<option value="0">Encontrado</option>
-									<option value="1">Perdido</option>
-									<option value="2">Albergue</option>
-								</select>
-							</div>
+{% load staticfiles %}
+<div class="ui page grid">
+	<div class="one wide column"></div>
+	<div class="seven wide column">
+		<div class="ui raised segment">
+			<div class="ui form">
+				<div class="ui grid">
+					<div class="eight wide column">
+						<div class="field">
+							<label>Estatus</label>
+							<select class="ui dropdown">
+								<option value="">Seleccionar</option>
+								<option value="0">Encontrado</option>
+								<option value="1">Perdido</option>
+								<option value="2">Albergue</option>
+							</select>
 						</div>
-						<div class="eight wide column">
-							<div class="field">
-								<label>Sexo</label>
-								<select class="ui dropdown">
-									<option value="">Seleccionar</option>
-									<option value="0">Mujer</option>
-									<option value="1">Hombre</option>
-								</select>
-							</div>
-						</div>
-						<div class="eight wide column">
-							<div class="field">
-								<label>Fecha de extravío</label>
-								<input type="text">
-							</div>
-						</div>
-						<div class="eight wide column">
-							<div class="field">
-								<label>Nombre</label>
-								<input type="text">
-							</div>
-						</div>
-						<div class="eight wide column">
-							<div class="field">
-								<label>Fecha de nacimiento</label>
-								<input type="date">
-							</div>
-						</div>
-						<div class="eight wide column">
-							<div class="field">
-								<label>Estado/Provincia</label>
-								<select class="ui dropdown">
-									<option value="">Seleccionar</option>
-									<option value="0">Aguascalientes</option>
-									<option value="1">Jalisco</option>
-									<option value="2">Nayarit</option>
-								</select>
-							</div>
-						</div>
-						<div class="eight wide column">
-							<div class="field">
-								<label>Ciudad</label>
-								<select class="ui dropdown">
-									<option value="">Seleccionar</option>
-									<option value="0">Aguascalientes</option>
-									<option value="1">Guadalajara</option>
-									<option value="2">Hermosillo</option>
-								</select>
-							</div>
-						</div>
-						<div class="eight wide column">
-							<div class="field">
-								<label>Detalles</label>
-								<textarea></textarea>
-							</div>
-						</div>
-						<div class="eight wide column"></div>
-						<div class="eight wide column">
-						
-							<div class="field">
-								<div class="ui button">
-								  Reportar
-								</div>
-							</div>
-						</div>
-						
 					</div>
+					<div class="eight wide column">
+						<div class="field">
+							<label>Sexo</label>
+							<select class="ui dropdown">
+								<option value="">Seleccionar</option>
+								<option value="0">Mujer</option>
+								<option value="1">Hombre</option>
+							</select>
+						</div>
+					</div>
+					<div class="eight wide column">
+						<div class="field">
+							<label>Fecha de extravío</label>
+							<input type="text">
+						</div>
+					</div>
+					<div class="eight wide column">
+						<div class="field">
+							<label>Nombre</label>
+							<input type="text">
+						</div>
+					</div>
+					<div class="eight wide column">
+						<div class="field">
+							<label>Fecha de nacimiento</label>
+							<input type="date">
+						</div>
+					</div>
+					<div class="eight wide column">
+						<div class="field">
+							<label>Estado/Provincia</label>
+							<select class="ui dropdown">
+								<option value="">Seleccionar</option>
+								<option value="0">Aguascalientes</option>
+								<option value="1">Jalisco</option>
+								<option value="2">Nayarit</option>
+							</select>
+						</div>
+					</div>
+					<div class="eight wide column">
+						<div class="field">
+							<label>Ciudad</label>
+							<select class="ui dropdown">
+								<option value="">Seleccionar</option>
+								<option value="0">Aguascalientes</option>
+								<option value="1">Guadalajara</option>
+								<option value="2">Hermosillo</option>
+							</select>
+						</div>
+					</div>
+					<div class="eight wide column">
+						<div class="field">
+							<label>Detalles</label>
+							<textarea></textarea>
+						</div>
+					</div>
+					<div class="eight wide column"></div>
+					<div class="eight wide column">
+					
+						<div class="field">
+							<div class="ui button">
+							  Reportar
+							</div>
+						</div>
+					</div>
+					
 				</div>
 			</div>
 		</div>
-		<div class="six wide column">
-			<div class="ui segment">
-				<img class="ui big centered image" src="{% static "img/image.png" %}">
-			</div>
+	</div>
+	<div class="six wide column">
+		<div class="ui segment">
+			<img class="ui big centered image" src="{% static "img/image.png" %}">
 		</div>
 	</div>
-
-	<footer>
-		Footer
-	</footer>
-	<script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
-	<script type="text/javascript" src="{% static "js/semantic.min.js" %}"></script>
-	<script type="text/javascript" src="{% static "js/general.js" %}"></script>
-</body>
-<html>
+</div>

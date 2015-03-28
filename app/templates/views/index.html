@@ -1,225 +1,168 @@
-<!DOCTYPE html>
-<html >
-<head>
-	<title></title>
-	{% load staticfiles %}
-	<link rel="stylesheet" type="text/css" href="{% static "css/semantic.min.css" %}">
-	<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+{% load staticfiles %}
 
-</head>
-<body>
-	<header>
-		<div class="ui teal large inverted menu">
-			<a class="ui item">
-				<i class="group icon"></i> VPMP
-			</a>
-			<a class="active item">
-				<i class="home icon"></i> Home
-			</a>
-			
-				<div class="item">
-					<div class="ui fluid icon input">
-						<input type="text" placeholder="Buscar...">
-						<i class="search link icon"></i>
-					</div>
+<div class="ui grid">
+	<div class="three wide column">
+		<div class="ui raised teal segment">
+			<h2>Buscar por:</h2>
+			<div class="ui form">
+				<div class="field">
+					<label>Estatus</label>
+					<select class="ui dropdown">
+						<option value="">Seleccionar</option>
+						<option value="0">Encontrado</option>
+						<option value="1">Perdido</option>
+						<option value="2">Albergue</option>
+					</select>
 				</div>
-				<div class="right menu">
-				<a class="ui item">
-					Iniciar Sesión
-				</a>
-				<a class="ui item">
-					Registrarse
-				</a>
-			</div>
-		</div>
-
-	</header>
-
-	<div class="ui grid">
-		<div class="three wide column">
-			<div class="ui raised teal segment">
-				<h2>Buscar por:</h2>
-				<div class="ui form">
-					<div class="field">
-						<label>Estatus</label>
-						<select class="ui dropdown">
-							<option value="">Seleccionar</option>
-							<option value="0">Encontrado</option>
-							<option value="1">Perdido</option>
-							<option value="2">Albergue</option>
-						</select>
-					</div>
-					<div class="field">
-						<label>Fecha de extravío</label>
-						<input type="date">
-					</div>
-					<div class="field">
-						<label>Estado</label>
-						<select class="ui dropdown">
-							<option value="">Seleccionar</option>
-							<option value="0">Aguascalientes</option>
-							<option value="1">Jalisco</option>
-							<option value="2">Edo. de México</option>
-						</select>
-					</div>
-					<div class="field">
-						<label>Ciudad</label>
-						<select class="ui dropdown">
-							<option value="">Seleccionar</option>
-							<option value="0">Aguascalientes</option>
-							<option value="1">Guadalajara</option>
-							<option value="2">Hermosillo</option>
-						</select>
-					</div>
-					<div class="field">
-						<label>Sexo</label>
-						<select class="ui dropdown">
-							<option value="">Seleccionar</option>
-							<option value="0">Mujer</option>
-							<option value="1">Hombre</option>
-						</select>
-					</div>
-					<div class="field">
-						<label>Edad desde</label>
-						<select class="ui dropdown">
-							<option value="">Seleccionar</option>
-							<option value="0">0</option>
-							<option value="0">1</option>
-							<option value="0">2</option>
-						</select>
-					</div>
-					<div class="field">
-						<label>Edad hasta</label>
-						<select class="ui dropdown">
-							<option value="">Seleccionar</option>
-							<option value="0">98</option>
-							<option value="0">99</option>
-							<option value="0">100</option>
-						</select>
-					</div>
+				<div class="field">
+					<label>Fecha de extravío</label>
+					<input type="date">
+				</div>
+				<div class="field">
+					<label>Estado</label>
+					<select class="ui dropdown">
+						<option value="">Seleccionar</option>
+						<option value="0">Aguascalientes</option>
+						<option value="1">Jalisco</option>
+						<option value="2">Edo. de México</option>
+					</select>
+				</div>
+				<div class="field">
+					<label>Ciudad</label>
+					<select class="ui dropdown">
+						<option value="">Seleccionar</option>
+						<option value="0">Aguascalientes</option>
+						<option value="1">Guadalajara</option>
+						<option value="2">Hermosillo</option>
+					</select>
+				</div>
+				<div class="field">
+					<label>Sexo</label>
+					<select class="ui dropdown">
+						<option value="">Seleccionar</option>
+						<option value="0">Mujer</option>
+						<option value="1">Hombre</option>
+					</select>
+				</div>
+				<div class="field">
+					<label>Edad desde</label>
+					<select class="ui dropdown">
+						<option value="">Seleccionar</option>
+						<option value="0">0</option>
+						<option value="0">1</option>
+						<option value="0">2</option>
+					</select>
+				</div>
+				<div class="field">
+					<label>Edad hasta</label>
+					<select class="ui dropdown">
+						<option value="">Seleccionar</option>
+						<option value="0">98</option>
+						<option value="0">99</option>
+						<option value="0">100</option>
+					</select>
 				</div>
 			</div>
 		</div>
-		<div class="ten wide column">
-			<div class="ui raised segment">
-				<div>
-					<div class="ui horizontal divider">dd/mm/yyyy</div>	
-					<div class="ui grid">
-						<div class="one wide column"></div>
-						<div class="four wide column">
-							<div class="ui segment">
-								<div>
-									<img class="ui medium image" src="{% static "img/image.png" %}">
-								</div>
-								<div class="ui divider"></div>
-								<div>
-									<span>Nombre<span>
-									<span style="float:right"><i class="warning circle icon"></i></span>
-								</div>
-								<div>Lugar</div>
-							</div>
-						</div>
-						<div class="one wide column"></div>
-						<div class="four wide column">
-							<div class="ui segment">
-								<div>
-									<img class="ui medium image" src="{% static "img/image.png" %}">
-								</div>
-								<div class="ui divider"></div>
-								<div>
-									<span>Nombre<span>
-									<span style="float:right"><i class="warning circle icon"></i></span>
-								</div>
-								<div>Lugar</div>
-							</div>
-						</div>
-						<div class="one wide column"></div>
-						<div class="four wide column">
-							<div class="ui segment">
-								<div>
-									<img class="ui medium image" src="{% static "img/image.png" %}">
-								</div>
-								<div class="ui divider"></div>
-								<div>
-									<span>Nombre<span>
-									<span style="float:right"><i class="warning circle icon"></i></span>
-								</div>
-								<div>Lugar</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div>
-					<div class="ui horizontal divider">dd/mm/yyyy</div>	
-					<div class="ui grid">
-						<div class="one wide column"></div>
-						<div class="four wide column">
-							<div class="ui segment">
-								<div>
-									<img class="ui medium image" src="{% static "img/image.png" %}">
-								</div>
-								<div class="ui divider"></div>
-								<div>
-									<span>Nombre<span>
-									<span style="float:right"><i class="warning circle icon"></i></span>
-								</div>
-								<div>Lugar</div>
-							</div>
-						</div>
-						<div class="one wide column"></div>
-						<div class="four wide column">
-							<div class="ui segment">
-								<div>
-									<img class="ui medium image" src="{% static "img/image.png" %}">
-								</div>
-								<div class="ui divider"></div>
-								<div>
-									<span>Nombre<span>
-									<span style="float:right"><i class="warning circle icon"></i></span>
-								</div>
-								<div>Lugar</div>
-							</div>
-						</div>
-						<div class="one wide column"></div>
-						<div class="four wide column">
-							<div class="ui segment">
-								<div>
-									<img class="ui medium image" src="{% static "img/image.png" %}">
-								</div>
-								<div class="ui divider"></div>
-								<div>
-									<span>Nombre<span>
-									<span style="float:right"><i class="warning circle icon"></i></span>
-								</div>
-								<div>Lugar</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="one wide column"></div>
 	</div>
-
-	<footer>
-		<div class="ui grid">
-			<div class="sixteen wide column">
-				<div class="ui center aligned segment">
-					<a href="/modules/dropdown.html">Home </a> &nbsp; | &nbsp;
-					<a href="/modules/dropdown.html">¿Qué hacer? </a> &nbsp; | &nbsp;
-					<a href="/modules/dropdown.html">¿Cómo denunciar? </a> &nbsp; | &nbsp;
-					<a href="/modules/dropdown.html">Contacto </a> &nbsp; | &nbsp;
-					<a href="/modules/dropdown.html">Acerca de</a> &nbsp; | &nbsp;
-					©2015 VPMP
+	<div class="ten wide column">
+		<div class="ui raised segment">
+			<div>
+				<div class="ui horizontal divider">dd/mm/yyyy</div>	
+				<div class="ui grid">
+					<div class="one wide column"></div>
+					<div class="four wide column">
+						<div class="ui segment">
+							<div>
+								<img class="ui medium image" src="{% static "img/image.png" %}">
+							</div>
+							<div class="ui divider"></div>
+							<div>
+								<span>Nombre<span>
+								<span style="float:right"><i class="warning circle icon"></i></span>
+							</div>
+							<div>Lugar</div>
+						</div>
+					</div>
+					<div class="one wide column"></div>
+					<div class="four wide column">
+						<div class="ui segment">
+							<div>
+								<img class="ui medium image" src="{% static "img/image.png" %}">
+							</div>
+							<div class="ui divider"></div>
+							<div>
+								<span>Nombre<span>
+								<span style="float:right"><i class="warning circle icon"></i></span>
+							</div>
+							<div>Lugar</div>
+						</div>
+					</div>
+					<div class="one wide column"></div>
+					<div class="four wide column">
+						<div class="ui segment">
+							<div>
+								<img class="ui medium image" src="{% static "img/image.png" %}">
+							</div>
+							<div class="ui divider"></div>
+							<div>
+								<span>Nombre<span>
+								<span style="float:right"><i class="warning circle icon"></i></span>
+							</div>
+							<div>Lugar</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="two wide column">
+			<div>
+				<div class="ui horizontal divider">dd/mm/yyyy</div>	
+				<div class="ui grid">
+					<div class="one wide column"></div>
+					<div class="four wide column">
+						<div class="ui segment">
+							<div>
+								<img class="ui medium image" src="{% static "img/image.png" %}">
+							</div>
+							<div class="ui divider"></div>
+							<div>
+								<span>Nombre<span>
+								<span style="float:right"><i class="warning circle icon"></i></span>
+							</div>
+							<div>Lugar</div>
+						</div>
+					</div>
+					<div class="one wide column"></div>
+					<div class="four wide column">
+						<div class="ui segment">
+							<div>
+								<img class="ui medium image" src="{% static "img/image.png" %}">
+							</div>
+							<div class="ui divider"></div>
+							<div>
+								<span>Nombre<span>
+								<span style="float:right"><i class="warning circle icon"></i></span>
+							</div>
+							<div>Lugar</div>
+						</div>
+					</div>
+					<div class="one wide column"></div>
+					<div class="four wide column">
+						<div class="ui segment">
+							<div>
+								<img class="ui medium image" src="{% static "img/image.png" %}">
+							</div>
+							<div class="ui divider"></div>
+							<div>
+								<span>Nombre<span>
+								<span style="float:right"><i class="warning circle icon"></i></span>
+							</div>
+							<div>Lugar</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-	</footer>
+	</div>
+	<div class="one wide column"></div>
+</div>
 
-	<script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
-	<script type="text/javascript" src="{% static "js/semantic.min.js" %}"></script>
-	<script type="text/javascript" src="{% static "js/general.js" %}"></script>
-</body>
-<html>
