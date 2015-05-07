@@ -1,94 +1,95 @@
-{% load staticfiles %}
-<div class="ui page grid">
+<div class="ui page grid" ng-controller="AddReportCtrl">
 	<div class="one wide column"></div>
 	<div class="seven wide column">
 		<div class="ui raised segment">
-			<div class="ui form">
+			<form class="ui form" ng-submit="insertReport(report)">
 				<div class="ui grid">
 					<div class="eight wide column">
 						<div class="field">
 							<label>Estatus</label>
-							<select class="ui dropdown">
+							<select class="ui dropdown" data-ng-model="report.status">
 								<option value="">Seleccionar</option>
-								<option value="0">Encontrado</option>
-								<option value="1">Perdido</option>
-								<option value="2">Albergue</option>
+								<option value="encontrado">Encontrado</option>
+								<option value="perdido">Perdido</option>
+								<option value="albergue">Albergue</option>
 							</select>
 						</div>
 					</div>
 					<div class="eight wide column">
 						<div class="field">
 							<label>Sexo</label>
-							<select class="ui dropdown">
+							<select class="ui dropdown" data-ng-model="report.gender">
 								<option value="">Seleccionar</option>
-								<option value="0">Mujer</option>
-								<option value="1">Hombre</option>
+								<option value="mujer">Mujer</option>
+								<option value="hombre">Hombre</option>
 							</select>
 						</div>
 					</div>
 					<div class="eight wide column">
 						<div class="field">
 							<label>Fecha de extravío</label>
-							<input type="text">
+							<input type="date" data-ng-model="report.missing_date">
 						</div>
 					</div>
 					<div class="eight wide column">
 						<div class="field">
 							<label>Nombre</label>
-							<input type="text">
+							<input type="text" data-ng-model="report.name_subject">
 						</div>
 					</div>
 					<div class="eight wide column">
 						<div class="field">
 							<label>Fecha de nacimiento</label>
-							<input type="date">
+							<input type="date" data-ng-model="report.birth_date">
 						</div>
 					</div>
 					<div class="eight wide column">
 						<div class="field">
 							<label>Estado/Provincia</label>
-							<select class="ui dropdown">
+							<select class="ui dropdown" data-ng-model="report.state">
 								<option value="">Seleccionar</option>
-								<option value="0">Aguascalientes</option>
-								<option value="1">Jalisco</option>
-								<option value="2">Nayarit</option>
+								<option value="aguascalientes">Aguascalientes</option>
+								<option value="baja california">Baja California</option>
+								<option value="baja california sur">Baja California Sur</option>
+								<option value="jalisco">Jalisco</option>
+								<option value="nayarit">Nayarit</option>
 							</select>
 						</div>
 					</div>
 					<div class="eight wide column">
 						<div class="field">
 							<label>Ciudad</label>
-							<select class="ui dropdown">
-								<option value="">Seleccionar</option>
-								<option value="0">Aguascalientes</option>
-								<option value="1">Guadalajara</option>
-								<option value="2">Hermosillo</option>
-							</select>
+							<input type="text" data-ng-model="report.city">
 						</div>
 					</div>
 					<div class="eight wide column">
 						<div class="field">
 							<label>Detalles</label>
-							<textarea></textarea>
+							<textarea data-ng-model="report.description"></textarea>
 						</div>
 					</div>
-					<div class="eight wide column"></div>
+					<div class="eight wide column">
+						<div class="field">
+							<label>User ID</label>
+							<input type="text" data-ng-model="report.user_fk">
+						</div>
+					</div>
 					<div class="eight wide column">
 					
 						<div class="field">
-							<div class="ui button">
+							<button class="ui button">
 							  Reportar
-							</div>
+							</button>
 						</div>
 					</div>
 					
 				</div>
-			</div>
+			</form>
 		</div>
 	</div>
 	<div class="six wide column">
 		<div class="ui segment">
-			<img class="ui big centered image" src="{% static "img/image.png" %}">
+			<img class="ui big centered image" src="static/img/image.png">
 		</div>
 	</div>
 </div>

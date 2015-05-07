@@ -2,6 +2,10 @@
 	margin: 3em 0em;
 }
 
+.description-item{
+	margin: 1em 0;
+}
+
 .description-item > span:first-child{
 	font-weight: bold;
 }
@@ -10,3 +14,6 @@
 	padding: 1em;
 }
 
+.report-link{
+	color: black !important;
+}

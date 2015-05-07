@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<title></title>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static "css/semantic.min.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+
+</head>	
+<body>
+	
+	{% include "general/_header.html" %}
+
+	<div class="container">
+		{{content}}
+	</div>
+
+	<div class="container" ng-view=""></div>
+
+	{% include 'general/_footer.html' %}
+	
+	<script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "js/semantic.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "js/general.js" %}"></script>
+	<script type="text/javascript" src="{% static "js/angular.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "js/angular-route.js" %}"></script>
+	<script type="text/javascript" src="{% static "js/app.js" %}"></script>
+</body>
+<html>

@@ -1,3 +1,1 @@
-$('select.dropdown')
-  .dropdown()
-;
+$('select.dropdown').dropdown();

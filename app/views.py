@@ -12,13 +12,13 @@ def template(request):
 
 def index(request):
     template = loader.get_template("general/template.html")
-    html = loader.render_to_string("views/index.html", {})
+    #html = loader.render_to_string("views/index.html", {})
     context = RequestContext(request, {
-        'content': html
+        #'content': html
         })
     return HttpResponse(template.render(context))
 
-def report(request):
+def report(request, id):
     template = loader.get_template("general/template.html")
     html = loader.render_to_string("views/report-detail.html", {})
     context = RequestContext(request, {

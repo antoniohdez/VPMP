@@ -1,4 +1,4 @@
-{% load staticfiles %}
+<div ng-controller="ReportCtrl">
 	<div class="ui page grid">
 		<div class="one wide column"></div>
 		<div class="fourteen wide column">
@@ -6,43 +6,43 @@
 				<div class="ui divided grid">
 					<div class="eight wide column">
 						<h2>
-							Nombre
+							{{report.name_subject}}
 						</h2>
 						<div class="ui divider"></div>
 						<div class="ui segment">
-							<div class="description">Descripción</div>
+							<div class="description">{{report.description}}</div>
 							<div class="description-item">
 								<span>Sexo: </span>
-								<span>Hombre</span>
+								<span>{{report.gender}}</span>
 							</div>
 							<div class="description-item">
 								<span>Fecha de nacimiento: </span>
-								<span>dd/mm/yyyy</span>
+								<span>{{report.birth_date}}</span>
 							</div>
 							<div class="description-item">
 								<span>Estado/Provincia: </span>
-								<span>Jalisco</span>
+								<span>{{report.state}}</span>
 							</div>
 							<div class="description-item">
 								<span>Ciudad: </span>
-								<span>Guadalajara</span>
+								<span>{{report.city}}</span>
 							</div>
 							<div class="description-item">
 								<span>Fecha de extravio: </span>
-								<span>dd/mm/yyyy</span>
+								<span>{{report.missing_date}}</span>
 							</div>
 						</div>
 					</div>
 					<div class="eight wide column">
 						<div class="ui segment">
-							<img class="ui medium centered image" src="{% static "img/image.png" %}">
+							<img class="ui medium centered image" src="static/img/image.png">
 						</div>
 						<div class="ui segment">
 							<div class="ui tiny images">
-								<img class="ui image" src="{% static "img/image.png" %}">
-								<img class="ui image" src="{% static "img/image.png" %}">
-								<img class="ui image" src="{% static "img/image.png" %}">
-								<img class="ui image" src="{% static "img/image.png" %}">
+								<img class="ui image" src="static/img/image.png">
+								<img class="ui image" src="static/img/image.png">
+								<img class="ui image" src="static/img/image.png">
+								<img class="ui image" src="static/img/image.png">
 							</div>
 						</div>
 					</div>
@@ -56,29 +56,11 @@
 		<div class="one wide column"></div>
 		<div class="fourteen wide column">
 			<div class="ui raised segment">
-				<div class="comment">
-					<img class="ui middle aligned mini image" src="{% static "img/image.png" %}">
-					<span>Nombre</span>
-					<span>dd/mm/yyyy</span>
-					<span>mm:hh</span>
+				<div class="comment" ng-repeat="comment in comments">
+					<img class="ui middle aligned mini image" src="static/img/image.png">
+					<span>{{comment.comment_date}}</span>
 					<br>
-					<span>Comment</span>
-				</div>
-				<div class="comment">
-					<img class="ui middle aligned mini image" src="{% static "img/image.png" %}">
-					<span>Nombre</span>
-					<span>dd/mm/yyyy</span>
-					<span>mm:hh</span>
-					<br>
-					<span>Comment</span>
-				</div>
-				<div class="comment">
-					<img class="ui middle aligned mini image" src="{% static "img/image.png" %}">
-					<span>Nombre</span>
-					<span>dd/mm/yyyy</span>
-					<span>mm:hh</span>
-					<br>
-					<span>Comment</span>
+					<span>{{comment.content}}</span>
 				</div>
 				<div class="ui form">
 					<div class="field">
@@ -90,3 +72,4 @@
 		</div>
 		<div class="one wide column"></div>
 	</div>
+</div>

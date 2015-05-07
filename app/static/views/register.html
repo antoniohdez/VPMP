@@ -1,0 +1,38 @@
+<div class="ui form" ng-controller="RegisterCtrl">
+	<div class="ui grid">
+		<div class="six wide column"></div>
+		<div class="four wide column">
+			<form class="ui raised segment" ng-submit="insertUser(user)">
+				<div class="field">
+					<img class="ui small centered image" src="static/img/group.png">
+				</div>
+				<div class="field">
+					<div class="ui input">
+						<input type="text" placeholder="Nombre/Institución" data-ng-model="user.name">
+					</div>
+				</div>
+				<div class="field">
+					<div class="ui input">
+						<input type="text" placeholder="Correo Electrónico" data-ng-model="user.email">
+					</div>
+				</div>
+				<div class="field">
+					<div class="ui input">
+						<input type="text" placeholder="Contraseña" data-ng-model="user.password">
+					</div>
+				</div>
+				<div class="field">
+					<div class="ui input">
+						<input type="text" placeholder="Reescriba Contraseña" data-ng-model="user.password2">
+					</div>
+				</div>
+				<div class="field">
+					<button class="ui fluid button">
+					  Registrar
+					</button>
+				</div>
+			</form>	
+		</div>
+		<div class="six wide column"></div>
+	</div>
+</div>
