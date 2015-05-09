@@ -58,6 +58,7 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 
 DATABASES = {
     'default': {
+        
         'ENGINE': 'mysql.connector.django',
         #'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'django',

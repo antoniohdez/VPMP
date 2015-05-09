@@ -1,5 +1,15 @@
 var app = angular.module('app', ['ngRoute']);
 
+app.filter('range', function() {
+  return function(input, min, max) {
+    min = parseInt(min); //Make string input int
+    max = parseInt(max);
+    for (var i=min; i<max; i++)
+      input.push(i);
+    return input;
+  };
+});
+
 app.config(['$routeProvider',
 	function($routeProvider) {
 	$routeProvider.
@@ -54,6 +64,7 @@ app.factory("CRUDService", ['$http', function($http) {
 	}
 
 	obj.insertReport = function (report) {
+
 		return $http.post(serviceBase + 'report/', report);
 	};
 
@@ -93,17 +104,17 @@ app.controller('ReportCtrl', function($scope, $location, $routeParams, CRUDServi
 app.controller('AddReportCtrl', function($scope, $location, CRUDService) {
 	$scope.report = {};
 	$scope.insertReport = function(report) {
-
+/*
 		date = new Date(report.birth_date);
 		report.birth_date = date.getFullYear()+'-'+date.getMonth()+1+'-'+date.getDate();
 
 		date = new Date(report.missing_date);
 		report.missing_date = date.getFullYear()+'-'+date.getMonth()+1+'-'+date.getDate();
-
+*/
 		console.log("NEW REPORT!");
 		console.log(report);
 		CRUDService.insertReport(report);
-		$location.path('/');
+		//$location.path('/');
 	};
 });
 
@@ -121,5 +132,3 @@ app.controller('ProfileCtrl', function($scope, $location, $routeParams, CRUDServ
 		$scope.reports = data.data;
 	});
 });
-
-
