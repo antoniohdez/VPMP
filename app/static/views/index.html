@@ -14,7 +14,7 @@
 				</div>
 				<div class="field">
 					<label>Fecha de extravío</label>
-					<input type="date">
+					<input id="date_filter" type="text">
 				</div>
 				<div class="field">
 					<label>Estado</label>
@@ -84,7 +84,7 @@
 		<div class="ui raised teal segment">
 			<div>
 				<!--<div class="ui horizontal divider">dd/mm/yyyy</div>	-->
-				<div class="ui grid">
+				<div class="ui stackable grid">
 					<div class="four wide column" ng-repeat="report in reports">
 						<a class="report-link" href="#/report/{{report.id}}">
 							<div class="ui segment">
@@ -101,55 +101,14 @@
 						</a>
 					</div>	
 				</div>
-				<div class="ui stackable grid">
-					<div class="four wide column">
-						<a class="report-link" href="#/report/{{report.id}}">
-							<div class="ui segment">
-								<div>
-									<img class="ui medium image" src="static/img/image.png">
-								</div>
-								<div class="ui divider"></div>
-								<div>
-									<span>Nombre<span>
-									<span style="float:right"><i class="warning circle icon"></i></span>
-								</div>
-								<div>Zapopan</div>
-							</div>
-						</a>
-					</div>
-					<div class="four wide column">
-						<a class="report-link" href="#/report/{{report.id}}">
-							<div class="ui segment">
-								<div>
-									<img class="ui medium image" src="static/img/image.png">
-								</div>
-								<div class="ui divider"></div>
-								<div>
-									<span>Nombre<span>
-									<span style="float:right"><i class="warning circle icon"></i></span>
-								</div>
-								<div>Zapopan</div>
-							</div>
-						</a>
-					</div>
-					<div class="four wide column">
-						<a class="report-link" href="#/report/{{report.id}}">
-							<div class="ui segment">
-								<div>
-									<img class="ui medium image" src="static/img/image.png">
-								</div>
-								<div class="ui divider"></div>
-								<div>
-									<span>Nombre<span>
-									<span style="float:right"><i class="warning circle icon"></i></span>
-								</div>
-								<div>Zapopan</div>
-							</div>
-						</a>
-					</div>	
-				</div>
 			</div>
 		</div>
 	</div>
 	<div class="one wide column"></div>
 </div>
+<script>
+	$(function() {
+		$( "#date_filter" ).datepicker({ dateFormat: 'dd/mm/yy' });
+	});
+	$('.ui.dropdown').dropdown();
+</script>

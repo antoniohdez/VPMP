@@ -6,17 +6,19 @@
 				<div class="ui horizontal divider">Mi perfil</div>	
 				<div class="ui grid">
 					<div class="four wide column" ng-repeat="report in reports">
-						<div class="ui segment">
-							<div>
-								<img class="ui medium image" src="static/img/image.png">
+						<a class="report-link" href="#/report/{{report.id}}">
+							<div class="ui segment">
+								<div>
+									<img class="ui medium image" src="static/img/image.png">
+								</div>
+								<div class="ui divider"></div>
+								<div>
+									<span>{{report.name_subject}}<span>
+									<span style="float:right"><i class="warning circle icon"></i></span>
+								</div>
+								<div>{{report.city}}, {{report.state}}</div>
 							</div>
-							<div class="ui divider"></div>
-							<div>
-								<span>{{report.name_subject}}<span>
-								<span style="float:right"><i class="warning circle icon"></i></span>
-							</div>
-							<div>{{report.city}}, {{report.state}}</div>
-						</div>
+						</a>
 					</div>
 				</div>
 			</div>

@@ -69,7 +69,7 @@ app.factory("CRUDService", ['$http', function($http) {
 	};
 
 	obj.insertUser = function (user) {
-		return $http.post(serviceBase + 'register/', user);
+		return $http.post(serviceBase + 'user/', user);
 	};
 
 	obj.deleteReport = function (id) {
@@ -121,8 +121,8 @@ app.controller('AddReportCtrl', function($scope, $location, CRUDService) {
 app.controller('RegisterCtrl', function($scope, $location, CRUDService) {
 	$scope.user = {};
 	$scope.insertUser = function(user) {
-		CRUDService.insertReport(user);
-		$location.path('/');
+		CRUDService.insertUser(user);
+		//$location.path('/');
 	};
 });
 

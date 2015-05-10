@@ -7,8 +7,7 @@
 					<div class="eight wide column">
 						<div class="field">
 							<label>Estatus</label>
-							<select class="ui dropdown" data-ng-model="report.status">
-								<option value="">Seleccionar</option>
+							<select class="ui dropdown" data-ng-model="report.status" required>
 								<option value="encontrado">Encontrado</option>
 								<option value="perdido">Perdido</option>
 								<option value="albergue">Albergue</option>
@@ -18,8 +17,7 @@
 					<div class="eight wide column">
 						<div class="field">
 							<label>Sexo</label>
-							<select class="ui dropdown" data-ng-model="report.gender">
-								<option value="">Seleccionar</option>
+							<select class="ui dropdown" data-ng-model="report.gender" required>
 								<option value="mujer">Mujer</option>
 								<option value="hombre">Hombre</option>
 							</select>
@@ -28,25 +26,25 @@
 					<div class="eight wide column">
 						<div class="field">
 							<label>Fecha de extravío</label>
-							<input type="text" data-ng-model="report.missing_date ">
+							<input id="missing_date" type="text" data-ng-model="report.missing_date" required>
 						</div>
 					</div>
 					<div class="eight wide column">
 						<div class="field">
 							<label>Nombre</label>
-							<input type="text" data-ng-model="report.name_subject">
+							<input type="text" data-ng-model="report.name_subject" required>
 						</div>
 					</div>
 					<div class="eight wide column">
 						<div class="field">
 							<label>Fecha de nacimiento</label>
-							<input type="text" data-ng-model="report.birth_date">
+							<input id="birth_date" type="text" data-ng-model="report.birth_date" required>
 						</div>
 					</div>
 					<div class="eight wide column">
 						<div class="field">
 							<label>Estado/Provincia</label>
-							<select class="ui dropdown" data-ng-model="report.state">
+							<select class="ui dropdown" data-ng-model="report.state" required>
 								<option value="aguascalientes">Aguascalientes</option>
 								<option value="baja california">Baja California</option>
 								<option value="baja california sur">Baja California Sur</option>
@@ -84,13 +82,13 @@
 					<div class="eight wide column">
 						<div class="field">
 							<label>Ciudad</label>
-							<input type="text" data-ng-model="report.city">
+							<input type="text" data-ng-model="report.city" required>
 						</div>
 					</div>
 					<div class="eight wide column">
 						<div class="field">
 							<label>Detalles</label>
-							<textarea data-ng-model="report.description"></textarea>
+							<textarea data-ng-model="report.description" required></textarea>
 						</div>
 					</div>
 					<div class="eight wide column">
@@ -118,3 +116,10 @@
 		</div>
 	</div>
 </div>
+<script>
+	$(function() {
+		$( "#birth_date" ).datepicker({ dateFormat: 'dd/mm/yy' });
+		$( "#missing_date" ).datepicker({ dateFormat: 'dd/mm/yy' });
+	});
+	$('.ui.dropdown').dropdown();
+</script>
