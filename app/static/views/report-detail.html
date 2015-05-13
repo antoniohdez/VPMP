@@ -55,20 +55,25 @@
 	<div class="ui stackable grid">
 		<div class="one wide column"></div>
 		<div class="fourteen wide column">
-			<div class="ui raised segment">
-				<div class="comment" ng-repeat="comment in comments">
-					<img class="ui middle aligned mini image" src="static/img/image.png">
-					<span>{{comment.comment_date}}</span>
-					<br>
-					<span>{{comment.content}}</span>
-				</div>
-				<div class="ui form">
-					<div class="field">
-						<label>Escribe un comentario</label>
-						<textarea></textarea>
+			<form class="ui form" ng-submit="createComment(comment)">
+				<div class="ui raised segment">
+					<div class="comment" ng-repeat="comment in comments">
+						<img class="ui middle aligned mini image" src="static/img/image.png">
+						<span>{{comment.comment_date}}</span>
+						<br>
+						<span>{{comment.content}}</span>
+					</div>
+					<div class="ui form">
+						<div class="field">
+							<label>Escribe un comentario</label>
+							<textarea data-ng-model="comment.content"></textarea>
+						</div>
+						<div class="field">
+							<button class="ui right primary button" style="float:right">Enviar comentario</button>
+						</div>
 					</div>
 				</div>
-			</div>
+			</form>
 		</div>
 		<div class="one wide column"></div>
 	</div>

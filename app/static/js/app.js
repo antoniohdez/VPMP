@@ -78,6 +78,10 @@ app.factory("CRUDService", ['$http', function($http) {
 		});
 	};
 
+	obj.createComment = function (comment) {
+		return $http.post(serviceBase + 'comment/', comment);
+	}
+
 	return obj;
 }]);
 
@@ -98,6 +102,20 @@ app.controller('ReportCtrl', function($scope, $location, $routeParams, CRUDServi
 		console.log(data.data);
 		$scope.comments = data.data;
 	});
+
+	$scope.createComment = function(comment) {
+		if(typeof variable_here === 'undefined'){
+			swal("Agrega un commentario");
+			return;
+		};
+		var date = new Date();
+		var string_date = date.getFullYear() + "-" + date.getDate() + "-" +  (date.getMonth() + 1);
+
+		comment.comment_date = string_date;
+		comment.report_fk = $scope.report_id;
+		
+		CRUDService.createComment(comment);
+	};
 
 });
 
