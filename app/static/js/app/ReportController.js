@@ -38,16 +38,25 @@ app.controller('ReportCtrl', function($scope, $location, $routeParams, CRUDServi
 	});
 
 	$scope.createComment = function(comment) {
-		if(typeof variable_here === 'undefined'){
+		if(typeof comment === 'undefined'){
 			swal("Agrega un commentario");
 			return;
 		};
+		var tmp = {};
+
 		var date = new Date();
-		var string_date = date.getFullYear() + "-" + date.getDate() + "-" +  (date.getMonth() + 1);
+		var string_date = date.getFullYear() + "-" + ((date.getMonth() + 1) + "-" +  date.getDate());
 
 		comment.comment_date = string_date;
 		comment.report_fk = $scope.report_id;
 		
-		CRUDService.createComment(comment);
+		
+		tmp.report_fk = $scope.report_id;
+		tmp.comment_date = string_date;
+		tmp.content = comment.content;
+		console.log(tmp);
+
+
+		CRUDService.createComment(tmp);
 	};
 });

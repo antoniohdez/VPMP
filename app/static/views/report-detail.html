@@ -10,7 +10,10 @@
 						</h2>
 						<div class="ui divider"></div>
 						<div class="ui segment">
-							<div class="description">{{report.description}}</div>
+							<div class="description-item">
+								<span>Estatus: </span>
+								<span>{{report.status}}</span>
+							</div>
 							<div class="description-item">
 								<span>Sexo: </span>
 								<span>{{report.gender}}</span>
@@ -31,6 +34,7 @@
 								<span>Fecha de extravio: </span>
 								<span>{{report.missing_date}}</span>
 							</div>
+							<div class="description">{{report.description}}</div>
 						</div>
 					</div>
 					<div class="eight wide column">

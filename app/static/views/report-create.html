@@ -8,6 +8,7 @@
 						<div class="field">
 							<label>Estatus</label>
 							<select class="ui dropdown" data-ng-model="report.status" required>
+								<option value="">Seleccionar</option>
 								<option value="encontrado">Encontrado</option>
 								<option value="perdido">Perdido</option>
 								<option value="albergue">Albergue</option>
@@ -18,6 +19,7 @@
 						<div class="field">
 							<label>Sexo</label>
 							<select class="ui dropdown" data-ng-model="report.gender" required>
+								<option value="" selected>Seleccionar</option>
 								<option value="mujer">Mujer</option>
 								<option value="hombre">Hombre</option>
 							</select>
@@ -45,6 +47,7 @@
 						<div class="field">
 							<label>Estado/Provincia</label>
 							<select class="ui dropdown" data-ng-model="report.state" required>
+								<option value="" selected>Seleccionar</option>
 								<option value="aguascalientes">Aguascalientes</option>
 								<option value="baja california">Baja California</option>
 								<option value="baja california sur">Baja California Sur</option>
