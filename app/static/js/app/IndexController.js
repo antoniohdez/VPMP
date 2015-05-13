@@ -1,11 +1,16 @@
 app.controller('IndexCtrl', function($scope, $location, CRUDService) {
+	
+	Parse.initialize("R7sHSEafzcqAei4imaSv4zuwAgmU6BzAKq3P2lVc", "HoF0IDovfRBJvSwWuFODijEtqkZ7bjRHQpDo4C3i");
+	var ImageObject = Parse.Object.extend("Image");
+	var query = new Parse.Query(ImageObject);
+
 	$scope.filterReports = function(filter) {
 		console.log(filter);
 		if(typeof filter === 'undefined'){
 			filter = {};
 		}
 		if(typeof filter.missing_date === 'undefined'){
-			filter.missing_date = "null-null-null";
+			filter.missing_date = "null-null-null"; //yy-mm-dd
 		};
 		if(typeof filter.status === 'undefined'){
 			filter.status = "null";
@@ -24,7 +29,36 @@ app.controller('IndexCtrl', function($scope, $location, CRUDService) {
 		};
 
 		CRUDService.getReports(filter.missing_date, filter.status, filter.state, filter.gender, filter.lower_age, filter.higher_age).then(function(data){
-			console.log(data.data);
+			for (var i = 0; i < data.data.length; i++) {
+				//console.log(data.data[i]);
+				(function(i){
+					query = new Parse.Query(ImageObject);
+				
+					query.equalTo("image_id", parseInt(data.data[i].id) );
+
+					data.data[i].image = "static/img/image.png";
+
+					query.find({
+						success: function(results) {
+							//console.log("Successfully retrieved " + results.length + " objects.");
+							// Do something with the returned Parse.Object values
+							if(results.length > 0){
+								console.log(i);
+								data.data[i].image = results[0].get("image");
+
+								console.log( "SRC: " + results[0].get("image") );
+								document.getElementById("image_"+ i).src = results[0].get("image");
+							}
+						},
+						error: function(error) {
+							alert("Error: " + error.code + " " + error.message);
+						}
+					});
+				})(i)
+				
+
+			};
+
 			$scope.reports = data.data;
 		});
 	};
