@@ -1,11 +1,4 @@
 app.controller('IndexCtrl', function($scope, $location, CRUDService) {
-	/*
-	missing_date=2013-4-2&
-	status=albergue&
-	state=Nayarit&
-	gender=MUJER&
-	age=11&20
-	*/
 	$scope.filterReports = function(filter) {
 		console.log(filter);
 		if(typeof filter === 'undefined'){

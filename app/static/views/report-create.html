@@ -105,7 +105,6 @@
 							</button>
 						</div>
 					</div>
-					
 				</div>
 			</form>
 		</div>
@@ -113,13 +112,14 @@
 	<div class="six wide column">
 		<div class="ui segment">
 			<img class="ui big centered image" src="static/img/image.png">
+			<input id="image_report" type="file" class="ui button" value="Subir imagen" style="margin: 1em 0;">
 		</div>
 	</div>
 </div>
 <script>
 	$(function() {
-		$( "#birth_date" ).datepicker({ dateFormat: 'dd-mm-yy' });
-		$( "#missing_date" ).datepicker({ dateFormat: 'dd-mm-yy' });
+		$( "#birth_date" ).datepicker({ dateFormat: 'yy-mm-dd' });
+		$( "#missing_date" ).datepicker({ dateFormat: 'yy-mm-dd' });
 	});
 	$('.ui.dropdown').dropdown();
 </script>
