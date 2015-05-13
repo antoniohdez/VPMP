@@ -96,8 +96,7 @@
 					</div>
 					<div class="eight wide column">
 						<div class="field">
-							<label>User ID</label>
-							<input type="text" data-ng-model="report.user_fk">
+							<input type="hidden" data-ng-model="report.user_fk" value="1">
 						</div>
 					</div>
 					<div class="eight wide column">
@@ -115,10 +114,15 @@
 	<div class="six wide column">
 		<div class="ui segment">
 			<img class="ui big centered image" src="static/img/image.png">
-			<input id="image_report" type="file" class="ui button" value="Subir imagen" style="margin: 1em 0;">
+			<input id="image_report" type="file" class="ui button" value="Subir imagen" style="margin: 1em 0; max-width:100%">
 		</div>
 	</div>
 </div>
+<style type="text/css">
+	select{
+		margin: 50em !important;
+	}
+</style>
 <script>
 	$(function() {
 		$( "#birth_date" ).datepicker({ dateFormat: 'yy-mm-dd' });

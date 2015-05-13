@@ -27,7 +27,7 @@ app.controller('AddReportCtrl', function($scope, $location, CRUDService) {
 			var image = new ImageObject();
 			console.log(data);
 			image.save({ image_id: data.data.id, image: $scope.image }).then(function(object) {
-				alert(data.data.id);	
+				swal("Reporte creado exitosamente");
 			});
 				
 			$scope.reports = data.data;

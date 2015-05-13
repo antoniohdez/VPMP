@@ -4,6 +4,7 @@
 
 .description-item{
 	margin: 1em 0;
+	max-width: 50%;
 }
 
 .description-item > span:first-child{
