@@ -1,24 +1,24 @@
-<div class="ui stackable grid" ng-controller="IndexCtrl">
+<div class="ui stackable grid" ng-controller="IndexCtrl" ng-init="filterReports(filter)">
 	<div class="three wide column">
 		<div class="ui raised teal segment">
 			<h2>Buscar por:</h2>
 			<div class="ui form">
 				<div class="field">
 					<label>Estatus</label>
-					<select class="ui dropdown">
+					<select class="ui dropdown" ng-model="filter.status" ng-change="filterReports(filter)">
 						<option value="">Seleccionar</option>
-						<option value="0">Encontrado</option>
-						<option value="1">Perdido</option>
-						<option value="2">Albergue</option>
+						<option value="encontrado">Encontrado</option>
+						<option value="perdido">Perdido</option>
+						<option value="albergue">Albergue</option>
 					</select>
 				</div>
 				<div class="field">
 					<label>Fecha de extravío</label>
-					<input id="date_filter" type="text">
+					<input id="date_filter" type="text" ng-model="filter.status" ng-change="filterReports(filter)">
 				</div>
 				<div class="field">
 					<label>Estado</label>
-					<select class="ui dropdown">
+					<select class="ui dropdown" ng-model="filter.state" ng-change="filterReports(filter)">
 						<option value="" selected>Seleccionar</option>
 						<option value="aguascalientes">Aguascalientes</option>
 						<option value="baja california">Baja California</option>
@@ -55,15 +55,15 @@
 				</div>
 				<div class="field">
 					<label>Sexo</label>
-					<select class="ui dropdown">
+					<select class="ui dropdown" ng-model="filter.gender" ng-change="filterReports(filter)">
 						<option value="">Seleccionar</option>
-						<option value="0">Mujer</option>
-						<option value="1">Hombre</option>
+						<option value="mujer">Mujer</option>
+						<option value="hombre">Hombre</option>
 					</select>
 				</div>
 				<div class="field">
 					<label>Edad desde</label>
-					<select class="ui dropdown">
+					<select class="ui dropdown" ng-model="filter.lower_age" ng-change="filterReports(filter)">
 						<option value="" selected>Seleccionar</option>
 						<option ng-repeat="n in [] | range:1:100" value="{{n}}">{{n}}</option>
 						<option value="101">100 o más</option>
@@ -71,7 +71,7 @@
 				</div>
 				<div class="field">
 					<label>Edad hasta</label>
-					<select class="ui dropdown">
+					<select class="ui dropdown" ng-model="filter.higher_age" ng-change="filterReports(filter)">
 						<option value="" selected>Seleccionar</option>
 						<option ng-repeat="n in [] | range:1:100" value="{{n}}">{{n}}</option>
 						<option value="101">100 o más</option>

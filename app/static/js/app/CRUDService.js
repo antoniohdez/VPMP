@@ -5,6 +5,10 @@ app.factory("CRUDService", ['$http', function($http) {
 	obj.getReports = function(){
 		return $http.get(serviceBase + 'report/');
 	}
+
+	obj.getReports = function(missing_date, status, state, gender, lower_age, higher_age){
+		return $http.get(serviceBase + 'report/filter/missing_date=' + missing_date + '&status=' + status + '&state=' +  state + '&gender=' + gender + '&lower_age=' + lower_age + '&higher_age=' + higher_age);
+	}
 	
 	obj.getReport = function(id){
 		return $http.get(serviceBase + 'report/' + id + '/');
