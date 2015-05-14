@@ -1,5 +1,6 @@
 app.controller('AddReportCtrl', function($scope, $location, CRUDService) {
 	$scope.report = {};
+	$scope.report.user_fk = 1;
 	$scope.image = "";
 
 	document.getElementById('image_report').addEventListener("change", readImage, false);
@@ -15,6 +16,7 @@ app.controller('AddReportCtrl', function($scope, $location, CRUDService) {
 	}
 
 	$scope.insertReport = function(report) {
+		console.log(report);
 		CRUDService.insertReport(report).then(function(data){
 			Parse.initialize("R7sHSEafzcqAei4imaSv4zuwAgmU6BzAKq3P2lVc", "HoF0IDovfRBJvSwWuFODijEtqkZ7bjRHQpDo4C3i");
 			var ImageObject = Parse.Object.extend("Image");
