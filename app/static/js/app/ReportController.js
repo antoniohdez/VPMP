@@ -6,7 +6,6 @@ app.controller('ReportCtrl', function($scope, $location, $routeParams, CRUDServi
 
 	CRUDService.getReport($scope.report_id).then(function(data){
 		$scope.report = data.data;
-		console.log(data.data);
 		query = new Parse.Query(ImageObject);
 	
 		query.equalTo("image_id", data.data.id );
@@ -17,11 +16,9 @@ app.controller('ReportCtrl', function($scope, $location, $routeParams, CRUDServi
 			success: function(results) {
 				//console.log("Successfully retrieved " + results.length + " objects.");
 				// Do something with the returned Parse.Object values
-				console.log(results);
 				if(results.length > 0){
 					//data.data.image = results[0].get("image");
 
-					console.log( "SRC: " + results[0].get("image") );
 					document.getElementById("image_detail").src = results[0].get("image");
 				}
 			},
@@ -54,9 +51,8 @@ app.controller('ReportCtrl', function($scope, $location, $routeParams, CRUDServi
 		tmp.report_fk = $scope.report_id;
 		tmp.comment_date = string_date;
 		tmp.content = comment.content;
-		console.log(tmp);
-
 
 		CRUDService.createComment(tmp);
+		$location.reload();
 	};
 });

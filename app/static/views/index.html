@@ -5,7 +5,7 @@
 			<div class="ui form">
 				<div class="field">
 					<label>Estatus</label>
-					<select class="ui dropdown" ng-model="filter.status" ng-change="filterReports(filter)">
+					<select ng-model="filter.status" ng-change="filterReports(filter)">
 						<option value="">Seleccionar</option>
 						<option value="encontrado">Encontrado</option>
 						<option value="perdido">Perdido</option>
@@ -18,7 +18,7 @@
 				</div>
 				<div class="field">
 					<label>Estado</label>
-					<select class="ui dropdown" ng-model="filter.state" ng-change="filterReports(filter)">
+					<select ng-model="filter.state" ng-change="filterReports(filter)">
 						<option value="" selected>Seleccionar</option>
 						<option value="aguascalientes">Aguascalientes</option>
 						<option value="baja california">Baja California</option>
@@ -55,7 +55,7 @@
 				</div>
 				<div class="field">
 					<label>Sexo</label>
-					<select class="ui dropdown" ng-model="filter.gender" ng-change="filterReports(filter)">
+					<select ng-model="filter.gender" ng-change="filterReports(filter)">
 						<option value="">Seleccionar</option>
 						<option value="mujer">Mujer</option>
 						<option value="hombre">Hombre</option>
@@ -63,7 +63,7 @@
 				</div>
 				<div class="field">
 					<label>Edad desde</label>
-					<select class="ui dropdown" ng-model="filter.lower_age" ng-change="filterReports(filter)">
+					<select ng-model="filter.lower_age" ng-change="filterReports(filter)">
 						<option value="" selected>Seleccionar</option>
 						<option ng-repeat="n in [] | range:1:100" value="{{n}}">{{n}}</option>
 						<option value="101">100 o más</option>
@@ -71,7 +71,7 @@
 				</div>
 				<div class="field">
 					<label>Edad hasta</label>
-					<select class="ui dropdown" ng-model="filter.higher_age" ng-change="filterReports(filter)">
+					<select ng-model="filter.higher_age" ng-change="filterReports(filter)">
 						<option value="" selected>Seleccionar</option>
 						<option ng-repeat="n in [] | range:1:100" value="{{n}}">{{n}}</option>
 						<option value="101">100 o más</option>
@@ -108,7 +108,7 @@
 </div>
 <script>
 	$(function() {
-		$( "#date_filter" ).datepicker({ dateFormat: 'dd-mm-yy' });
+		$( "#date_filter" ).datepicker({ dateFormat: 'yy-mm-dd' });
 	});
 	$('.ui.dropdown').dropdown();
 </script>

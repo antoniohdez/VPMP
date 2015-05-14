@@ -36,7 +36,6 @@ app.controller('IndexCtrl', function($scope, $location, CRUDService) {
 				
 					query.equalTo("image_id", parseInt(data.data[i].id) );
 
-					console.log("ID: "+i);
 					data.data[i].image = "static/img/image.png";
 
 					query.find({
@@ -44,10 +43,8 @@ app.controller('IndexCtrl', function($scope, $location, CRUDService) {
 							//console.log("Successfully retrieved " + results.length + " objects.");
 							// Do something with the returned Parse.Object values
 							if(results.length > 0){
-								console.log(i);
 								//data.data[i].image = results[0].get("image");
 
-								console.log( "SRC: " + results[0].get("image") );
 								document.getElementById("image_"+ (i+1)).src = results[0].get("image");
 							}
 						},
@@ -56,7 +53,6 @@ app.controller('IndexCtrl', function($scope, $location, CRUDService) {
 						}
 					});
 				})(i);
-				
 
 			};
 
