@@ -7,7 +7,7 @@
 					<div class="eight wide column">
 						<div class="field">
 							<label>Estatus</label>
-							<select class="ui dropdown" data-ng-model="report.status" required>
+							<select data-ng-model="report.status" required>
 								<option value="">Seleccionar</option>
 								<option value="encontrado">Encontrado</option>
 								<option value="perdido">Perdido</option>
@@ -18,7 +18,7 @@
 					<div class="eight wide column">
 						<div class="field">
 							<label>Sexo</label>
-							<select class="ui dropdown" data-ng-model="report.gender" required>
+							<select data-ng-model="report.gender" required>
 								<option value="" selected>Seleccionar</option>
 								<option value="mujer">Mujer</option>
 								<option value="hombre">Hombre</option>
@@ -46,7 +46,7 @@
 					<div class="eight wide column">
 						<div class="field">
 							<label>Estado/Provincia</label>
-							<select class="ui dropdown" data-ng-model="report.state" required>
+							<select data-ng-model="report.state" required>
 								<option value="" selected>Seleccionar</option>
 								<option value="aguascalientes">Aguascalientes</option>
 								<option value="baja california">Baja California</option>
@@ -118,11 +118,6 @@
 		</div>
 	</div>
 </div>
-<style type="text/css">
-	select{
-		margin: 50em !important;
-	}
-</style>
 <script>
 	$(function() {
 		$( "#birth_date" ).datepicker({ dateFormat: 'yy-mm-dd' });
